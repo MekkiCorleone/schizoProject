@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="{% static 'css/sign.css' %}">
+</head>
+<body>
+  {% if form.errors %}
+  <p>There was an error with ur form</p>
+  {% endif %}
+  {% load crispy_forms_tags %} 
+  <div class="container">
+    <h1>Create an Account</h1>
+    <form action="{% url 'sign_up' %}"  method="POST">
+      {% csrf_token %}
+      {{ form|crispy }}
+      
+<p>Already have an account? <a href="{% url 'login_user' %}">Log In</a></p>
+    <footer>
+      <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a>
+    </footer>
+<button type="submit">Sign Up</button>
+
+    </form>
+
+    
+  </div>
+</body>
+</html>
+{%endblock content%}

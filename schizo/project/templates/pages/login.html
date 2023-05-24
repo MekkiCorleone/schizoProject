@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Log In</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>Log In</h1>
+    <form method="POST">
+      {%csrf_token%}
+      {{lf}}
+      
+
+      <button type="submit">Log In</button>
+    </form>
+
+    <p>Don't have an account? <a href="{% url 'sign_up' %}">Sign Up</a></p>
+    <footer>
+      <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a>
+    </footer>
+  </div>
+</body>
+</html>
+{%endblock content%}

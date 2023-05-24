@@ -1,0 +1,14 @@
+{%load static%}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<nav>
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About Us</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'logout_user' %}">Log Out</a></li>
+      {% else %}
+      <li><a href="{% url 'sign_up' %}">Sign Up</a></li>
+      <li><a href="{% url 'login_user' %}">Log In</a></li>
+      {% endif %}
+    </ul>
+</nav>
