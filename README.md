@@ -4,4 +4,4 @@ Schizophrenia detection website (Backend)
 ##Dont edit without comments!
 
 #Kosom GitHub
-#Hygan khales
+#EL ZOBR 2AD KEDA
