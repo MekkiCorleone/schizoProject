@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<head><title>History</title>
+<style>
+strong{
+    font-size:large;
+    color:#d4443f;
+}
+</style>
+</head>
+<body>
+    {% if experiments %}
+        {% for experiment in experiments %}
+        <strong><p>You have added experiment of id ( {{ experiment.id }} )</p>
+        <p> you wrote description of experiment ( {{ experiment.id }} ) [ {{ experiment.description }} ]</p>
+        <p>You have added two csv files  first one is named {{ experiment.csv_file1.name }} and second one is named {{ experiment.csv_file2.name }}</p>
+        <p>The result of your experiment is ({{ experiment.result }})</p>
+   </strong><hr>
+        {% endfor %}
+    
+    {% else %}
+        <p><center><h1>No History found.</h1></center></p>
+    {% endif %}
+</body>
+{% endblock %}

@@ -1,0 +1,21 @@
+    .navbar-brand {
+    font-size: 40px;
+    margin-left: 65px;
+    font-weight: bolder;
+    color: #002db3 !important;
+    } 
+    .navbar-nav .nav-link {
+    margin-right: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #002db3 !important; 
+    }
+    .navbar-nav .nav-link:hover {
+    color: #0074b3 !important;
+    }
+    .navbar-nav .nav-link:active{
+    color: #002db3 !important;
+    }
+    body{
+        filter: brightness(100%);
+    }

@@ -138,8 +138,13 @@ EMAIL_HOST_USER = 'schizo688@gmail.com'
 EMAIL_HOST_PASSWORD = 'iinwakducgrtxarv'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
 PASSWORD_RESET_TIMOUT = 14400
+
+#Password reset settings
+
+LOGIN_REDIRECT_URL = '/home/'
+LOGOUT_REDIRECT_URL = '/about/'
+EMAIL_SUBJECT_PREFIX = 'Schizo'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

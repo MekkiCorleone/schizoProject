@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head><title>Experiment</title></head>
+    <h1>New Experiment</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+    {% if error_message %}
+  <div class="alert alert-danger" role="alert">
+    {{ error_message }}
+  </div>
+    {% endif %}
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}

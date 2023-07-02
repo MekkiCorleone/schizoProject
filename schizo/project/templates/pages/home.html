@@ -1,16 +1,48 @@
-{% extends 'base.html' %}
 {%block content%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
+    <title>Home</title>
+
+    <link rel="icon" href="{% static 'images/icons8-brain-96.png' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-    <h1>This is home page</h1>
+    <div class="bg-image" style="background-image: url({% static 'C:/Users/maboe/Desktop/schizoProject/schizo/project/project/static/images/40.jpg' %}); height: 100vh;background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;background-blend-mode: multiply;">
+        <div class="bg-overlay"></div>
+        {% include "parts/navhome.html" %}
+        <div class="container m-4">
+            
+            <br>
+            <div class="row">
+                <div class="col-lg-11 justify-content-end align-self-end ">
+                    <div class="jumbotron" style="background: none;">
+                        <h1 class="display-4 " style="color: whitesmoke; font-size: 50px; font-weight: bold;"><b>Schizophrenia</b></h1>
+                        <h1 class="display-4 " style="color: #002db3; font-size: 50px; font-weight: bold;"><b>Detection</b></h1>
+                        <br>
+                        <p class="lead" style="color: whitesmoke; font-size: 27px;"><b>This website uses CNN-LSTM models to analyze<br> EEG signals and provide a reliable schizophrenia diagnosis.</b></p>
+                        <hr class="my-4">
+                        <a class="btn btn-outline-primary btn-lg" href="{% url 'about' %}" role="button" style="background-color: #002db3; color: white; border-color: #002db3; border-radius: 12px;"
+                         onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0)';this.style.color='#002db3';this.style.borderColor='#002db3';this.style.borderRadius='12px';"
+                          onmouseout="this.style.backgroundColor='#002db3';this.style.color='white';this.style.borderColor='#002db3';this.style.borderRadius='12px';">Learn more</a>
+                    </div>
+                </div>
+                <div class="col-lg-1 align-self-evenly justify-content-end " >
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'js/cdnjs.cloudflare.com_ajax_libs_popper.js_1.11.0_umd_popper.min.js' %}"></script>
+    <script src="{% static 'js/code.jquery.com_jquery-3.7.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
 </body>
 </html>
+
 {%endblock content%}

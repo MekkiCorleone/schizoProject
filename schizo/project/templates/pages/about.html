@@ -1,17 +1,124 @@
-{% extends "base.html" %}
 {%block content%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title>
+    <link rel="icon" href="{% static 'images/icons8-brain-96.png' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
 </head>
 <body>
-    <h1>
-        It is schizophrenia project we are not opened yet!
-    </h1>
+  {% include "parts/navabout.html" %}
+
+      <br>
+    <section id="about-us" class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2 style="color: #002db3;">About Us</h2>
+              <p class="lead">We are a team of bioinformatics students dedicated to improving the early detection of schizophrenia. Our goal is to use advanced machine learning models to analyze brain imaging and brain signals(<a href="https://en.wikipedia.org/wiki/Electroencephalography" target=”_blank”><b>EEG</b></a> signals) data to identify individuals who may be at risk for developing the disease.</p>
+              <p class="lead">We aim to get reliable diagnoses of schizophrenia so With the help of our scientists we hope in the future we can save so many people before losing their social life and their life to Schizophrenia .</p>
+            </div>
+            <div class="col-lg-6 align-self-center">
+              <img src="{% static 'images/1920_hz-nr-schizophrenia-testb-header.jpg' %}" alt="Team photo" class="img-fluid rounded">
+            </div>
+          </div>
+        </div>
+    </section>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 justify-content-center align-self-center">
+          <h3 style="color: #002db3;">Our vision</h3>
+          <p class="lead ">A platform capable of providing a reliable diagnoses of schizophrenia. </p>
+        </div>
+        <div class="col-lg-4 justify-content-center">
+          <img src="{% static 'images/4863845.png' %}" alt="" class="img-fluid rounded" width="320" height="300">
+        </div>
+        <div class="col-lg-4 justify-content-center align-self-center">
+          <h3 style="color: #002db3;">Our mission</h3>
+          <p class="lead ">Applying deep learning techniques to brain signals for a better understanding of the disorder and to develop more accurate diagnoses of Schizophrenia. </p>
+        </div>
+      </div>
+    </div>  
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 justify-content-end align-self-center" style="padding-left: 50px;">
+          <h3 style="color: #002db3;">The motivation</h3>
+          <p class="lead">Due to the the spread of this disease around the world and the lack of quality in diagnosing this disease using the usual computer methods that we had to to provide a more accurate and objective diagnosis 
+            of the disorder so that early detection and intervention are vital for better prognosis.</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="{% static 'images/understanding-schiz-blog.jpg' %}" alt="" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="container">
+      <h2 class=" d-flex justify-content-center" style="color: #002db3;">How we did it ?</h2>
+      <div class="row">
+        <div class="col-lg-5">
+          <p class="lead">
+            <b>Data</b> of 81 subjects used in the experiment were measured to study the difference in EEG between schizophrenic patients and healthy subjects. N100 refers to a negative deflection in EEG brain waves after 100 ms when auditory stimulation is given. Schizophrenia patients have problems
+             with N100 because they have hearing impairment due to a dysfunction in the auditory cortex. Thus, a study was conducted to verify the difference in N100 between schizophrenic and healthy patients.
+          </p>
+        </div>
+        <div class="col-lg-2 align-self-center">
+          <img src="{% static 'images/noun-schizophrenia-1000160-6BA5E3-1024x1024.png' %}" alt="" class="img-fluid rounded">
+        </div>
+        <div class="col-lg-5">
+          <p class="lead">EEG was measured in a total of 70 channels by measuring 64-channel scalp EEG and 6 channels around the eyes and nose. In this study that compared the N100 differences between schizophrenic patients and healthy subjects
+            , among the 70 analyzed channels,only 9 electrode sites had distinct N100 , by training our models on this data we were able to get reliable accuracy.</p>
+          <p class="lead">If you want to know more you can check this <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4059422/" target=”_blank”>Paper</a></p>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 justify-content-end ">
+          <img src="{% static 'images/schizophrenia.jpg' %}" alt="" class="img-fluid rounded"> 
+        </div>
+        <div class="col-lg-6 justify-content-start ">
+          <h3 style="color: #002db3;">Our models</h3>
+          <br>
+          <p class="lead">
+            We applied deep learning techniques to EEG signals for a better understanding of the disorder and to develop more 
+            accurate diagnoses of Schizophrenia so in this project, we have trained, tested, and evaluated <b>LSTM</b> and <b>CNN</b> models that aim at detecting Schizophrenia 
+            with an accuracy up to 98% on both models. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="container ">
+      <div class="row">
+        <div class="col-lg-4 ">
+          <h3 style="color: #002db3;">How to use the platform?</h3>
+          <br><br>
+          <p class="lead ">
+            The models were built to receive the input data the EEG signals in the form of CSV format to proceed with the preproccessing and then into the model.
+          </p>
+          <p class="lead ">That's why our users have to convert the raw EEG signals to a <a href="https://en.wikipedia.org/wiki/Comma-separated_values" target=”_blank”><b>CSV</b></a> format so 
+            that it will be suitable for the platform.</b></p>
+        </div>
+        <div class="col-lg-8 justify-content-start" style="padding-right: 70px;">
+          <img src="{% static 'images/psychoses-diagnoses.jpg' %}" alt="" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+    <br><br><br>
+    
+
+
+
+    <script src="{% static 'js/cdnjs.cloudflare.com_ajax_libs_popper.js_1.11.0_umd_popper.min.js' %}"></script>
+    <script src="{% static 'js/code.jquery.com_jquery-3.7.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
 </body>
 </html>
 {%endblock content%}
