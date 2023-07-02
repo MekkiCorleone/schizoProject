@@ -5,7 +5,7 @@
 <html>
 <head>
   <title>Sign Up</title>
-  <link rel="stylesheet" href="{% static 'css/sign.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
   {% if form.errors %}
@@ -18,10 +18,7 @@
       {% csrf_token %}
       {{ form|crispy }}
       
-<p>Already have an account? <a href="{% url 'login_user' %}">Log In</a></p>
-    <footer>
-      <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a>
-    </footer>
+
 <button type="submit">Sign Up</button>
 
     </form>

@@ -1,0 +1,45 @@
+{%load static%}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<nav class="navbar navbar-expand-lg navbar-light bg-*">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="#" style="font-size: 27px; ">
+      SchizoDetect<img src="{% static 'images/icons8-brain-96.png' %}" width="60" height="55" class="d-inline-block align-center" alt=""  >
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav " style="padding-right:77px ;">
+        <li class="nav-item ">
+          <a class="nav-link active" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link " href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Experiments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{% url 'profilepage' user.username %}">Profile</a>
+            <a class="dropdown-item" href="{% url 'logout_user' %}">Log Out</a>
+          </div>
+        </li>
+        {% else %}
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="{% url 'login_signup' %}">Account</a>
+        </li>
+        {% endif %}
+        
+      </ul>
+    </div>
+  </div>
+</nav>

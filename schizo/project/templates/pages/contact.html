@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="icon" href="{% static 'images/icons8-brain-96.png' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+  {% include "parts/navbar.html" %}
+  <br>
+  <div class="container-fluid">
+    <div class="row m-3">
+      <div class="col-lg-5">
+        <img src="{% static 'images/schizophrenia-concept-symbol-of-depresion-dementia-ilustration-profile-of-a-person-with-monsters-vector.jpg' %}" alt="" class="img-fluid rounded">
+      </div>
+      <div class="col-lg-1"></div>
+      <div class="col-lg-6">
+        <br>
+        <h3 style="color: #002db3;">Contact Us</h3> 
+        <h5>Thank you for visiting our Schizophrenia detection site. If you have any questions, comments, or concerns, please don't hesitate to reach out to <br> us for data access.</h5>
+        <br>
+        <h4  style="color: #002db3;">Contact Information:</h4>
+        <p class="lead">Email : schizo688@gmail.com</p>
+        <p class="lead">Phone : +20 1283175554</p>
+        <p class="lead">Phone : +20 1063557277</p>
+        <br>
+        <h4  style="color: #002db3;">Contact us for new data sets:</h4>
+        <p class="lead">If you are a researcher and have additional data sets related to Schizophrenia detection that you would like to share with us, we would love to hear from you <br> and Thank you for considering our Schizophrenia detection site as a partner for <br> your research. We look forward to hearing from you.</p>
+        <br><br>
+        <h5></h5>
+      </div>
+    </div>
+  </div>
+      
+    
+    
+
+
+
+  <script src="{% static 'js/cdnjs.cloudflare.com_ajax_libs_popper.js_1.11.0_umd_popper.min.js' %}"></script>
+  <script src="{% static 'js/code.jquery.com_jquery-3.7.0.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>

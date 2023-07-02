@@ -1,28 +1,81 @@
-{% extends 'base.html' %}
-{% load static %}
 {%block content%}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Log In</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+	{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="icon" href="{% static 'images/icons8-brain-96.png' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
 </head>
 <body>
-  <div class="container">
-    <h1>Log In</h1>
-    <form method="POST">
-      {%csrf_token%}
-      {{lf}}
-      
+      {% include "parts/navbar.html" %}
+      <br>
+      {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+      {% endfor %}
+      {% endif %}
+       
+      <div class="container" style="padding-left: 150px;">
+        <div class="box" id="box">
+          <div class="form-side sign-up-form active">
+            {% load crispy_forms_tags %}
+            <form method="post" name="sign" action="#">
+              {%csrf_token%}
+              <h1>Create Account</h1>
+              <div class="name-group">
+                <input type="text" name="fname" placeholder="First Name">
+                <input type="text" name="lname" placeholder="Last Name" >
+              </div>
+              <input type="text" name="username" placeholder="Username">
+              <input type="email" name="email" placeholder="Email">
+              <input type="password" name="password" placeholder="Password">
+              <button type="submit" name="signup">SIGN UP</button>
+            </form>
+          </div>
+          
+          <div class="form-side sign-in-form">
+            <form method="post" name="log" action="#">
+              {%csrf_token%}
+              <h1>Sign in</h1>
+              <input type="text" name="Username" placeholder="Username">
+              <input type="password" name="Password" placeholder="Password">
+              <button type="submit" name="signin">SIGN IN</button>
+            </form>
+          </div>
+        
+          <div class="overlay-container">
+            <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                <h1>Welcome</h1>
+                <p><span>Already have an account?</span> Login with your Username.</p>
+                <button class="trans" id="signIn">SIGN IN</button>
+              </div>
+        
+              <div class="overlay-panel overlay-right">
+                <h1>Welcome</h1>
+                <p><span>Don't have an account?</span> Register with your personal info.</p>
+                <button class="trans" id="signUp">SIGN UP</button>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
 
-      <button type="submit">Log In</button>
-    </form>
-
-    <p>Don't have an account? <a href="{% url 'sign_up' %}">Sign Up</a></p>
-    <footer>
-      <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a>
-    </footer>
-  </div>
+    
+  	<script src="{% static 'js/login.js' %}"></script>
+    <script src="{% static 'js/cdnjs.cloudflare.com_ajax_libs_popper.js_1.11.0_umd_popper.min.js' %}"></script>
+    <script src="{% static 'js/code.jquery.com_jquery-3.7.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
 </body>
 </html>
+
 {%endblock content%}
